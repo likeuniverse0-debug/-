@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Space+Mono:wght@400;700&family=ZCOOL+KuaiLe&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Bungee", system-ui, sans-serif;
+  --font-mono: "Space Mono", monospace;
+  --font-cartoon: "ZCOOL KuaiLe", cursive;
+  
+  --color-paper: #e9e0c9;
+  --color-ink: #222222;
+  --color-retro-red: #eb5424;
+  --color-retro-blue: #4a7ebb;
+  --color-retro-green: #689f5a;
+  --color-retro-orange: #f29c1f;
+}
+
+@layer base {
+  body {
+    @apply bg-paper text-ink font-mono antialiased;
+    background-image: 
+      url("https://www.transparenttextures.com/patterns/paper-fibers.png"),
+      radial-gradient(circle at 50% 50%, rgba(0,0,0,0.02) 0%, transparent 80%);
+  }
+}
+
+.poster-border {
+  @apply border-[3px] border-ink rounded-sm;
+}
+
+.hand-drawn-shadow {
+  @apply shadow-[6px_6px_0px_0px_rgba(34,34,34,1)];
+}
+
+.label-tag {
+  @apply font-display text-[10px] bg-ink text-paper px-2 py-0.5 uppercase tracking-tighter;
+}
+
+.btn-retro {
+  @apply w-full text-left p-4 bg-white border-[3px] border-ink rounded-none relative transition-all duration-75;
+  box-shadow: 4px 4px 0px 0px rgba(34,34,34,1);
+}
+
+.btn-retro:hover {
+  @apply translate-x-[2px] translate-y-[2px];
+  box-shadow: 2px 2px 0px 0px rgba(34,34,34,1);
+}
+
+.btn-retro:active {
+  @apply translate-x-[4px] translate-y-[4px];
+  box-shadow: 0px 0px 0px 0px rgba(34,34,34,1);
+}
+
+.sketch-line {
+  @apply border-b-[2px] border-ink border-dashed opacity-30;
+}
+
+.accent-box {
+  @apply bg-retro-red text-white font-display px-4 py-2 rotate-[-2deg] transition-all hover:rotate-0;
+}
+
+/* Custom scrollbar for that vintage look */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-paper;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-ink;
+}
